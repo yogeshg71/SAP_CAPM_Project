@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "MyHANAApp",
+			"path": "MyHANAApp"
+		}
+	],
+	"settings": {
+		"SAP HANA Database Explorer.DatabaseList": [],
+		"terminal.integrated.shell.windows": "C:\\Users\\A200004108\\Downloads_SAP\\PowerShell-7.3.4-win-x64\\pwsh.exe",
+		"terminal.integrated.defaultProfile.windows": "C:\\Users\\A200004108\\Downloads_SAP\\PowerShell-7.3.4-win-x64\\pwsh.exe",
+		"SAP HANA Database Explorer.displaySapWebAnalyticsStartupNotification": false,
+		"SAP HANA Database Explorer.enableSapWebAnalytics": false
+	}
+}
