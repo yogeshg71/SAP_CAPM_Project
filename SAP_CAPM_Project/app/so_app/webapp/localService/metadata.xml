@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="CatalogService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="SalesOrder" EntityType="CatalogService.SalesOrder"/>
+            </EntityContainer>
+            <EntityType Name="SalesOrder">
+                <Key>
+                    <PropertyRef Name="soNumber"/>
+                </Key>
+                <Property Name="soNumber" Type="Edm.String" Nullable="false"/>
+                <Property Name="orderDate" Type="Edm.Date"/>
+                <Property Name="custName" Type="Edm.String"/>
+                <Property Name="custNo" Type="Edm.String"/>
+                <Property Name="poNumber" Type="Edm.Int32"/>
+                <Property Name="inquiryNo" Type="Edm.String"/>
+                <Property Name="totalOrderItems" Type="Edm.Int32"/>
+            </EntityType>
+            <Annotations Target="CatalogService.SalesOrder/soNumber">
+                <Annotation Term="Common.Label" String="Sales Order Number"/>
+            </Annotations>
+            <Annotations Target="CatalogService.SalesOrder/orderDate">
+                <Annotation Term="Common.Label" String="Order Date"/>
+            </Annotations>
+            <Annotations Target="CatalogService.SalesOrder/custName">
+                <Annotation Term="Common.Label" String="Customer Name"/>
+            </Annotations>
+            <Annotations Target="CatalogService.SalesOrder/custNo">
+                <Annotation Term="Common.Label" String="Customer Number"/>
+            </Annotations>
+            <Annotations Target="CatalogService.SalesOrder/poNumber">
+                <Annotation Term="Common.Label" String="PO Number"/>
+            </Annotations>
+            <Annotations Target="CatalogService.SalesOrder/inquiryNo">
+                <Annotation Term="Common.Label" String="Enquiry Number"/>
+            </Annotations>
+            <Annotations Target="CatalogService.SalesOrder/totalOrderItems">
+                <Annotation Term="Common.Label" String="TotalOrderItems"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
