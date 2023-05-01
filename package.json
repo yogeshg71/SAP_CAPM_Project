@@ -1,0 +1,25 @@
+{
+  "name": "SAP_CAPM_Project",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^6",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@sap/ux-specification": "^1.108.3",
+    "sqlite3": "^5"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-so_app": "cds watch --open so_app/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/so_app",
+    "app/so_app",
+    "app/so_app"
+  ]
+}

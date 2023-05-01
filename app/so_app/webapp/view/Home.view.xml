@@ -1,0 +1,109 @@
+<mvc:View controllerName="com.sap.soapp.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m">
+
+    <Shell id = "shell">
+        <App id = "app">
+            <pages>
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <Table items="{mainModel>/SalesOrder}" id="table0" mode="SingleSelectLeft" selectionChange="onSelect">
+                            <headerToolbar>
+                                <OverflowToolbar>
+                                    <content>
+                                        <ToolbarSpacer />
+                                        <SearchField id="searchField" width="20%" placeholder="search" search=".onSearch" />
+                                        <Button id="createButton" icon="sap-icon://add" tooltip="Create" visible="true" press="onOpenAddDialog">
+                                            <layoutData>
+                                                <OverflowToolbarLayoutData priority="NeverOverflow" />
+                                            </layoutData>
+                                        </Button>
+                                        <Button id="deleteButton" icon="sap-icon://delete" tooltip="Delete" visible="false" press="onDelete">
+                                            <layoutData>
+                                                <OverflowToolbarLayoutData priority="NeverOverflow" />
+                                            </layoutData>
+                                        </Button>
+
+                                        <Button id="saveButton" text="Save" type="Emphasized" visible="false" enabled="true" press="onSave" />
+                                        <Button id="editModeButton" visible="true" icon="sap-icon://edit" tooltip="Edit" press="onEditMode">
+                                            <layoutData>
+                                                <OverflowToolbarLayoutData priority="NeverOverflow" />
+                                            </layoutData>
+                                        </Button>
+                                    </content>
+                                    <dependents>
+                                        <Dialog id="OpenDialog" title="Create Sales Order">
+                                            <buttons>
+                                                <Button id="confirmCreate" text="Create" press=".onCreate" type="Emphasized" />
+                                                <Button id="cancelCreate" text="Cancel" press="onCancelDialog" type="Transparent" />
+                                            </buttons>
+                                          <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
+                                                <form:content>
+                                                    <Label text="SO Number" required="true" />
+                                                    <Input id="idSo" change="onNameChange" />
+                                                    <Label text="Customer Name" />
+                                                    <Input id="idCustName"  />
+                                                    <Label text="Customer Number" />
+                                                    <Input id="idCustomer" />
+                                                    <Label text="Po Number" />
+                                                    <Input id="idPo" />
+                                                    <Label text="Inquiry Number" />
+                                                    <Input id="idInqNo"  />
+                                                </form:content>
+                                            </form:SimpleForm>
+                                        </Dialog>
+                                    </dependents>
+                                    </OverflowToolbar>
+                            </headerToolbar>
+                            <items>
+                                <ColumnListItem type="Active" id="item0">
+                                    <cells>
+                                        <Text id="id1" text="{mainModel>soNumber}"/>
+                                        <Text id="id2" text="{mainModel>custName}"/>
+                                        <Text id="id3" text="{mainModel>custNo}"/>
+                                        <Text id="id4" text="{mainModel>PoNumber}"/>
+                                        <Text id="id5" text="{mainModel>inquiryNo}"/>
+                                        <Button id="id6" icon="sap-icon://edit" onPress="onSelect" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                            <columns>
+                                <Column>
+                                    <header>
+                                        <Label text="SO Number" />
+                                    </header>
+                                </Column>
+                                <Column>
+                                    <header>
+                                        <Label text="Customer Name" />
+                                    </header>
+                                </Column>
+                                <Column>
+                                    <header>
+                                        <Label text="Customer Number" />
+                                    </header>
+                                </Column>
+                                <Column>
+                                    <header>
+                                        <Label text="PO Number" />
+                                    </header>
+                                </Column>
+                                <Column>
+                                    <header>
+                                        <Label text="Inquiry Number" />
+                                    </header>
+                                </Column>
+                            </columns>
+                        </Table>
+        
+        
+        
+        
+        
+                    </content>
+    </Page>
+</pages>
+</App>
+</Shell>
+</mvc:View>
